@@ -1,0 +1,17 @@
+composer create-project symfony/skeleton my-api-project
+
+cd my-api-project
+
+composer require symfony/serializer symfony/routing symfony/http-foundation symfony/orm-pack doctrine/doctrine-migrations-bundle doctrine/dbal
+
+composer require symfony/maker-bundle --dev
+
+composer require symfony/validator
+
+php bin/console make:entity Product
+
+php bin/console make:migration
+
+php bin/console doctrine:migrations:migrate
+
+php bin/console make:controller ProductController
